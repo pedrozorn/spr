@@ -41,8 +41,11 @@ dependencies {
 
 openApiGenerate {
 	generatorName = "spring" // 使用するジェネレーター（例: Spring Boot 用コード生成）
-	inputSpec = "$rootDir/src/main/resources/api/openapi.yaml" // OpenAPI 仕様のファイルパス
-	outputDir = "$rootDir/generated" // 生成コードの出力先
+	inputSpec = "$rootDir/openapi/query.yaml" // OpenAPI 仕様のファイルパス
+	outputDir = "$rootDir/build" // 生成コードの出力先
+
+//	inputSpec = "$rootDir/src/main/resources/api/query.common-tasks.yaml" // OpenAPI 仕様のファイルパス
+//	outputDir = "$rootDir/generated" // 生成コードの出力先
 	apiPackage = "com.example.api" // API インターフェースのパッケージ名
 	modelPackage = "com.example.model" // モデルクラスのパッケージ名
 	invokerPackage = "com.example.invoker" // ヘルパークラスのパッケージ名
