@@ -1,0 +1,28 @@
+get:
+  operationId: getTasks
+  summary: |
+    タスク一覧を取得するAPI
+  tags:
+    - common/tasks
+  responses:
+    200:
+      description: 200 (OK)
+      content:
+        application/json:
+          examples:
+            複数のタスクをレスポンスする:
+              $ref: '../examples/get-common-tasks.yaml'
+          schema:
+            $ref: '../responses/get-common-tasks.yaml'
+    400:
+      description: 400 (Bad Request)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/bad_request_response.yaml'
+    500:
+      description: 500 (Internal Server Error)
+      content:
+        application/json:
+          schema:
+            $ref: '../../common/components/responses/internal_server_error_response.yaml'
