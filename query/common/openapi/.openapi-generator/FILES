@@ -1,0 +1,12 @@
+.openapi-generator-ignore
+README.md
+com/spr/query/common/presentation/openapi/generated/controller/ApiUtil.java
+com/spr/query/common/presentation/openapi/generated/controller/CommonApi.java
+com/spr/query/common/presentation/openapi/generated/model/BadRequestResponse.java
+com/spr/query/common/presentation/openapi/generated/model/BadRequestResponseError.java
+com/spr/query/common/presentation/openapi/generated/model/BadRequestResponseErrorDetailInner.java
+com/spr/query/common/presentation/openapi/generated/model/GetCommonTasks.java
+com/spr/query/common/presentation/openapi/generated/model/InternalServerErrorResponse.java
+com/spr/query/common/presentation/openapi/generated/model/InternalServerErrorResponseError.java
+com/spr/query/common/presentation/openapi/generated/model/Tasks.java
+pom.xml
