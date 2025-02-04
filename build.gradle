@@ -57,12 +57,24 @@ def commonSpringAdditionalProperties = [
 openApiGenerate {
 	generatorName = "spring"
 	inputSpec = "$rootDir/openapi/query.yaml"
-	outputDir = "$rootDir/query/common/openapi"
+	outputDir = "$rootDir/src"
 
-	apiPackage = "com.spr.query.common.presentation.openapi.generated.controller"
-	modelPackage = "com.spr.query.common.presentation.openapi.generated.model"
+	apiPackage = "/main/java/com/example/spr/presentation/generated/"
+
+//	apiPackage = "$rootDir/src/main/java/com/examle/spr/presentation/generated"
+//	modelPackage = "com.spr.query.common.presentation.openapi.src.main.java.generated.model"
 	configOptions = commonSpringAdditionalProperties
 }
+
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src/main/java', '$rootDir/profiles/resources']
+		}
+	}
+}
+
 
 tasks.named('test') {
 	useJUnitPlatform()
