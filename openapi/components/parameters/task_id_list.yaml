@@ -1,0 +1,5 @@
+type: array
+items:
+  type: integer
+description: タスク番号リスト
+example: [1,2]
