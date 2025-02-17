@@ -1,11 +1,11 @@
-package com.spr.infrastructure.mapper;
+package main.java.com.spr.infrastructure.mapper;
 
-import com.spr.application.dto.TaskDto;
+import main.java.com.spr.application.dto.TaskDto;
 import org.apache.ibatis.annotations.Mapper;
 
-import java.util.Optional;
+import java.util.List;
 
 @Mapper
 public interface TasksMapper {
-    Optional<TaskDto> getTask(Integer taskId);
+    List<TaskDto> getTasks(Integer taskId);
 }
