@@ -1,19 +1,18 @@
-package com.spr.application.usecase;
+package main.java.com.spr.application.usecase;
 
-import com.spr.application.dto.TaskDto;
-import com.spr.infrastructure.query.TasksQueryDataSource;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import main.java.com.spr.application.dto.TaskDto;
+import main.java.com.spr.infrastructure.query.TasksQueryDataSource;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
-@Service
+@Repository
 @RequiredArgsConstructor
 public class GetTasksUseCase {
-    final TasksQueryDataSource tasksQueryDataSource;
+    private final TasksQueryDataSource tasksQueryDataSource;
 
-    public Optional<TaskDto> execute(Integer taskId) {
-        final var task = tasksQueryDataSource.getTask(taskId);
-        return task;
+    public List<TaskDto> execute(Integer userId) {
+        return tasksQueryDataSource.getTasks(userId);
     }
 }
