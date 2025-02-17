@@ -6,13 +6,12 @@ get:
     - common/tasks
   parameters:
     - in: query
-      name: goods_id_list
-      description: タスクリスト
+      name: user_id
+      description: ユーザーID
       required: true
-      style: form
-      explode: false
       schema:
-        $ref: '../parameters/task_id_list.yaml'
+        format: int32
+        type: integer
   responses:
     200:
       description: 200 (OK)
