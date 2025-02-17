@@ -3,4 +3,4 @@ properties:
   tasks:
     type: array
     items:
-      $ref: '../schemas/tasks.yaml'
+      $ref: '../schemas/task.yaml'
