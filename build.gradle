@@ -34,8 +34,9 @@ dependencies {
 	implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'io.swagger.core.v3:swagger-annotations:2.2.22'
-	compileOnly 'org.projectlombok:lombok:1.18.28'
-	annotationProcessor 'org.projectlombok:lombok:1.18.28'
+	implementation 'org.projectlombok:lombok' // Lombok依存関係を追加
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20' // 重要: Lombokのアノテーションプロセッサを指定
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
 	testImplementation 'org.springframework:spring-webflux'
@@ -52,7 +53,7 @@ def commonSpringAdditionalProperties = [
 		serializableModel      : "true",
 		useJakartaEe           : "true",
 		requestMappingMode     : "api_interface",
-		generatedConstructorWithRequiredArgs: "false",
+		generatedConstructorWithRequiredArgs: "true",
 		removeEnumValuePrefix  : "false",
 		additionalModelTypeAnnotations : ";@lombok.NoArgsConstructor;@lombok.AllArgsConstructor;",
 		sourceFolder           : ".", // ← `src/main/java` を自動追加しない
@@ -61,10 +62,10 @@ def commonSpringAdditionalProperties = [
 openApiGenerate {
 	generatorName = "spring"
 	inputSpec = "$rootDir/openapi/query.yaml"
-	outputDir = "$rootDir/src/main/java"
+	outputDir = "$rootDir/src/"
 
-	apiPackage = 'com.spr.generated.controller'  // API層のパッケージ
-	modelPackage = 'com.spr.generated.model'  // ドメインモデル層のパッケージ
+	apiPackage = 'main.java.com.spr.generated.controller'  // API層のパッケージ
+	modelPackage = 'main.java.com.spr.generated.model'  // ドメインモデル層のパッケージ
 	configOptions = commonSpringAdditionalProperties
 }
 
