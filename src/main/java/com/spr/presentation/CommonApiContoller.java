@@ -1,8 +1,9 @@
-package java.com.spr.query.common.presentation.restapi;
+package main.java.com.spr.presentation;
 
 
 import lombok.RequiredArgsConstructor;
 import main.java.com.spr.application.usecase.GetTasksUseCase;
+import main.java.com.spr.generated.controller.CommonApi;
 import main.java.com.spr.generated.model.GetCommonTasksResponse;
 import main.java.com.spr.generated.model.Task;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class CommonApiContoller implements main.java.com.spr.generated.controller.CommonApi {
+public class CommonApiContoller implements CommonApi {
     private final GetTasksUseCase getTasksUseCase;
 
     @Override
