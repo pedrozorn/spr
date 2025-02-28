@@ -35,8 +35,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'io.swagger.core.v3:swagger-annotations:2.2.22'
 	implementation 'org.projectlombok:lombok' // Lombok依存関係を追加
+	// DB
+	implementation("org.springframework.boot:spring-boot-starter-jdbc") // JDBCの基本
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3") // MyBatisのSpring Boot統合
+	implementation("com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11") // SQL Server用のJDBCドライバ（バージョンは適宜変更）
 	compileOnly 'org.projectlombok:lombok:1.18.20'
-	annotationProcessor 'org.projectlombok:lombok:1.18.20' // 重要: Lombokのアノテーションプロセッサを指定
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
 	testImplementation 'org.springframework:spring-webflux'
