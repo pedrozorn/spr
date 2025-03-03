@@ -4,3 +4,24 @@ spring:
     username: sa
     password: Audrey123!
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  server:
+    port: 8080
+    ssl:
+      enabled: false
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+
+logging:
+  level:
+    org:
+      apache:
+        ibatis: DEBUG
+      mybatis:
+        spring:
+          SqlSessionFactoryBean: DEBUG
+      springframework:
+        jdbc:
+          datasource:
+            DataSourceTransactionManager: DEBUG

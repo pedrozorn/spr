@@ -18,11 +18,15 @@ public class CommonApiContoller implements CommonApi {
     @Override
     public ResponseEntity<GetCommonTasksResponse> getTasks(Integer userId) {
 
+        System.out.println("************************************");
+        System.out.println("Controller");
+        System.out.println("userId" + userId);
+
         final var tasksList = getTasksUseCase.execute(userId);
 
-        // TaskDtoのリストからGetCommonTasksResponse.Taskに変換
+//        Mapperで取得したTaskをOpenApiで定義したResponseのTask型に変換する
         final var taskResponseList = tasksList.stream()
-                .map(task -> new Task(task.id(), task.name())) // task.id(), task.name() でデータを取り出し
+                .map(task -> new Task(task.userId(),task.userId(), task.taskName())) // task.id(), task.name() でデータを取り出し
                 .toList();
 
         return ResponseEntity.ok(new GetCommonTasksResponse(taskResponseList));

@@ -5,6 +5,11 @@ properties:
     type: integer
     format: int32
     example: 1
+  userId:
+    description: ユーザーID
+    type: integer
+    format: int32
+    example: 1
   taskName:
     description: タスク名
     type: string

@@ -6,18 +6,20 @@
     <resultMap id="TaskDto" type="main.java.com.spr.application.dto.TaskDto">
         <constructor>
             <arg column="taskId" javaType="Integer"/>
+            <arg column="userId" javaType="Integer"/>
             <arg column="taskName" javaType="String"/>
             <arg column="isDeleted" javaType="boolean"/>
         </constructor>
     </resultMap>
     <select id="getTasks" parameterType="java.lang.Integer" resultMap="TaskDto">
         SELECT
-            ID AS taskId
-            ,TaskName AS taskName
+            id AS taskId
+            ,userId AS userId
+            ,taskName AS taskName
             ,isDeleted AS isDeleted
         FROM
             Tasks WITH(NOLOCK)
         WHERE
-            ID = #{taskId}
+            userId = #{userId}
     </select>
 </mapper>

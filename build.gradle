@@ -61,6 +61,7 @@ def commonSpringAdditionalProperties = [
 		removeEnumValuePrefix  : "false",
 		additionalModelTypeAnnotations : ";@lombok.NoArgsConstructor;@lombok.AllArgsConstructor;",
 		sourceFolder           : ".", // ← `src/main/java` を自動追加しない
+		skipOverwrite: "false"  // ここで明示的に上書きしない設定を防止
 ]
 
 openApiGenerate {

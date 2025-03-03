@@ -13,6 +13,7 @@ public class GetTasksUseCase {
     private final TasksQueryDataSource tasksQueryDataSource;
 
     public List<TaskDto> execute(Integer userId) {
+        System.out.println("GetTasksUseCase");
         return tasksQueryDataSource.getTasks(userId);
     }
 }
