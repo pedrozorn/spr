@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface TasksQueryDataSource {
     List<TaskDto> getTasks(Integer userId);
+
+    Integer getTask(Integer taskId);
 }

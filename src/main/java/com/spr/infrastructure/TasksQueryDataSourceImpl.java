@@ -19,5 +19,10 @@ public class TasksQueryDataSourceImpl implements TasksQueryDataSource {
 
         return tasksMapper.getTasks(userId);
     }
+
+    public Integer getTask(final Integer tasksId) {
+        return tasksMapper.getTask(tasksId);
+    }
+
 }
 

@@ -28,23 +28,21 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-graphql'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
-	implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'io.swagger.core.v3:swagger-annotations:2.2.22'
-	implementation 'org.projectlombok:lombok' // Lombok依存関係を追加
+
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 	// DB
-	implementation("org.springframework.boot:spring-boot-starter-jdbc") // JDBCの基本
-	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3") // MyBatisのSpring Boot統合
-	implementation("com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11") // SQL Server用のJDBCドライバ（バージョンは適宜変更）
-	compileOnly 'org.projectlombok:lombok:1.18.20'
+	implementation 'com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+	implementation 'io.swagger.core.v3:swagger-annotations:2.2.22'
+	implementation 'org.projectlombok:lombok'
+
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
 	testImplementation 'org.springframework:spring-webflux'
-	testImplementation 'org.springframework.graphql:spring-graphql-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 def commonSpringAdditionalProperties = [
@@ -78,7 +76,7 @@ openApiGenerate {
 sourceSets {
 	main {
 		java {
-			srcDirs = ['src/main/java']
+			srcDirs = ['src/main/java','src/main/resources']
 		}
 	}
 }

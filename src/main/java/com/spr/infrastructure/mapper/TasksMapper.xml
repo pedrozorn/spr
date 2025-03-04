@@ -22,4 +22,13 @@
         WHERE
             id = #{userId}
     </select>
+
+    <select id="getTask" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT
+            id AS taskId
+        FROM
+            Tasks WITH(NOLOCK)
+        WHERE
+            id = #{taskId}
+    </select>
 </mapper>
