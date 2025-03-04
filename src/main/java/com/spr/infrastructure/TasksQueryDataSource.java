@@ -1,6 +1,6 @@
-package main.java.com.spr.infrastructure.query;
+package com.spr.infrastructure;
 
-import main.java.com.spr.application.dto.TaskDto;
+import com.spr.application.dto.TaskDto;
 
 import java.util.List;
 

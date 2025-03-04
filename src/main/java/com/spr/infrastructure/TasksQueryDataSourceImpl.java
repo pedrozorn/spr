@@ -1,8 +1,9 @@
-package main.java.com.spr.infrastructure.query;
+package java.com.infrastructure;
 
+import com.spr.application.dto.TaskDto;
+import com.spr.infrastructure.TasksQueryDataSource;
+import com.spr.infrastructure.mapper.TasksMapper;
 import lombok.RequiredArgsConstructor;
-import main.java.com.spr.application.dto.TaskDto;
-import main.java.com.spr.infrastructure.mapper.TasksMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

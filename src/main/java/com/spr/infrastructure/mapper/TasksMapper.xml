@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="main.java.com.spr.infrastructure.mapper.TasksMapper">
-    <resultMap id="TaskDto" type="main.java.com.spr.application.dto.TaskDto">
+<mapper namespace="com.spr.infrastructure.mapper.TasksMapper">
+    <resultMap id="TaskDto" type="com.spr.application.dto.TaskDto">
         <constructor>
             <arg column="taskId" javaType="Integer"/>
             <arg column="userId" javaType="Integer"/>
@@ -20,6 +20,6 @@
         FROM
             Tasks WITH(NOLOCK)
         WHERE
-            userId = #{userId}
+            id = #{userId}
     </select>
 </mapper>

@@ -1,10 +1,9 @@
-package main.java.com.spr.application.usecase;
+package com.spr.application.usecase;
 
+import com.spr.application.dto.TaskDto;
+import com.spr.infrastructure.TasksQueryDataSource;
 import lombok.RequiredArgsConstructor;
-import main.java.com.spr.application.dto.TaskDto;
-import main.java.com.spr.infrastructure.query.TasksQueryDataSource;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository

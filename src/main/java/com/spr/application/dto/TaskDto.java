@@ -1,4 +1,4 @@
-package main.java.com.spr.application.dto;
+package com.spr.application.dto;
 
 public record TaskDto (
     Integer taskId
@@ -6,6 +6,7 @@ public record TaskDto (
     ,String taskName
     ,boolean isDeleted
 ) {}
+
 
 
 

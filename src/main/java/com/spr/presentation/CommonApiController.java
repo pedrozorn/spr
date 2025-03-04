@@ -1,18 +1,18 @@
-package main.java.com.spr.presentation;
+package com.spr.presentation;
 
 
+import com.spr.application.usecase.GetTasksUseCase;
+import com.spr.generated.model.GetCommonTasksResponse;
+import com.spr.generated.model.Task;
 import lombok.RequiredArgsConstructor;
-import main.java.com.spr.application.usecase.GetTasksUseCase;
-import main.java.com.spr.generated.controller.CommonApi;
-import main.java.com.spr.generated.model.GetCommonTasksResponse;
-import main.java.com.spr.generated.model.Task;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 
+
 @RestController
 @RequiredArgsConstructor
-public class CommonApiContoller implements CommonApi {
+public class CommonApiController implements CommonApi {
     private final GetTasksUseCase getTasksUseCase;
 
     @Override
@@ -29,6 +29,6 @@ public class CommonApiContoller implements CommonApi {
                 .map(task -> new Task(task.userId(),task.userId(), task.taskName())) // task.id(), task.name() でデータを取り出し
                 .toList();
 
-        return ResponseEntity.ok(new GetCommonTasksResponse(taskResponseList));
+        return ResponseEntity.ok(new GetCommonTasksResponse(null));
     }
 }
