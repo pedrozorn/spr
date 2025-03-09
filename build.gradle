@@ -36,9 +36,10 @@ dependencies {
 	implementation 'com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+	// Swagger
 	implementation 'io.swagger.core.v3:swagger-annotations:2.2.22'
+	// Lombok
 	implementation 'org.projectlombok:lombok'
-
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework:spring-webflux'
@@ -75,9 +76,7 @@ openApiGenerate {
 
 sourceSets {
 	main {
-		java {
-			srcDirs = ['src/main/java','src/main/resources']
-		}
+		resources.srcDirs = ["src/main/resources"]
 	}
 }
 
