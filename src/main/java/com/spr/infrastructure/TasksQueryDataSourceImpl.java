@@ -14,11 +14,11 @@ public class TasksQueryDataSourceImpl implements TasksQueryDataSource {
 
     @Override
     public List<TaskDto> getTasks(final Integer userId) {
-        System.out.println("TasksQueryDataSourceImpl");
-        System.out.println("tasksMapper is null? " + (tasksMapper == null)); // デバッグ出力
-        System.out.println("tasksMapper? " + tasksMapper );
+        System.out.println("getTasks");
+        final var result = tasksMapper.getTasks(userId);
+        System.out.println("result" + result);
 
-        return null;
+        return result;
     }
 
     @Override

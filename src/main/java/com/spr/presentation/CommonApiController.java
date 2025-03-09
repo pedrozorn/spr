@@ -43,7 +43,7 @@ public class CommonApiController implements CommonApi {
                 .map(task -> new Task(task.userId(),task.userId(), task.taskName())) // task.id(), task.name() でデータを取り出し
                 .toList();
 
-        return ResponseEntity.ok(new GetCommonTasksResponse(null));
+        return ResponseEntity.ok(new GetCommonTasksResponse(taskResponseList));
     }
 
 

@@ -12,4 +12,24 @@
             id = #{taskId}
     </select>
 
+    <resultMap id="TaskDto" type="com.spr.application.dto.TaskDto">
+        <constructor>
+            <arg column="taskId" javaType="Integer"/>
+            <arg column="userId" javaType="Integer"/>
+            <arg column="taskName" javaType="String"/>
+            <arg column="isDeleted" javaType="Boolean"/>
+        </constructor>
+    </resultMap>
+    <select id="getTasks" resultMap="TaskDto">
+        SELECT
+            id AS taskId
+            ,userId AS userId
+            ,taskName AS taskName
+            ,isDeleted AS isDeleted
+        FROM
+            Tasks WITH(NOLOCK)
+        WHERE
+            userId = #{userId}
+    </select>
+
 </mapper>

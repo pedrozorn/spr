@@ -4,7 +4,7 @@ public record TaskDto (
     Integer taskId
     ,Integer userId
     ,String taskName
-    ,boolean isDeleted
+    ,Boolean isDeleted
 ) {}
 
 
