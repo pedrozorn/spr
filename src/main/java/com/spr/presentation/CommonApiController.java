@@ -4,7 +4,6 @@ package com.spr.presentation;
 import com.spr.application.usecase.GetTaskUseCase;
 import com.spr.application.usecase.GetTasksUseCase;
 import com.spr.generated.model.GetCommonTasksResponse;
-import com.spr.generated.model.Sample;
 import com.spr.generated.model.Task;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +19,12 @@ public class CommonApiController implements CommonApi {
 
 
     @Override
-    public ResponseEntity<Sample> getTask(Integer taskId) {
+    public ResponseEntity<Task> getTask(Integer taskId) {
         System.out.println("************************************");
         System.out.println("Controller");
         System.out.println("id" + taskId);
-
-        final var responseTaskId = getTaskUseCase.execute(taskId);
-        return ResponseEntity.ok(new Sample(responseTaskId));
+        final var task = getTaskUseCase.execute(taskId);
+        return ResponseEntity.ok(new Task(task.taskId(),task.userId(), task.taskName()));
     }
 
     @Override
@@ -40,7 +38,7 @@ public class CommonApiController implements CommonApi {
 
 //        Mapperで取得したTaskをOpenApiで定義したResponseのTask型に変換する
         final var taskResponseList = tasksList.stream()
-                .map(task -> new Task(task.userId(),task.userId(), task.taskName())) // task.id(), task.name() でデータを取り出し
+                .map(task -> new Task(task.taskId(),task.userId(), task.taskName())) // task.id(), task.name() でデータを取り出し
                 .toList();
 
         return ResponseEntity.ok(new GetCommonTasksResponse(taskResponseList));

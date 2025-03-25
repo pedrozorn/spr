@@ -1,7 +1,7 @@
 get:
   operationId: getTask
   summary: |
-    タスクID取得を取得するAPI
+    タスクを取得するAPI
   tags:
     - common/tasks
   parameters:
@@ -17,7 +17,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../schemas/sample.yaml'
+              $ref: '../schemas/task.yaml'
     400:
       description: 400 (Bad Request)
       content:

@@ -1,7 +1,7 @@
 get:
   operationId: getTasks
   summary: |
-    タスク一覧を取得するAPI
+    ユーザーIDに紐づくタスク一覧を取得するAPI
   tags:
     - common/tasks
   parameters:

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface TasksMapper {
-    Integer getId(Integer taskId);
+    TaskDto getTask(Integer taskId);
 
     List<TaskDto> getTasks(Integer userId);
 }
